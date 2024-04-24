@@ -1,4 +1,6 @@
 #!/bin/bash
+
+
 CONTEXTLINES=0 # to be used for grep -A and -B
 INSENSTIVE="" # option for grep
 while getopts ":c:i" opt; do
@@ -32,7 +34,8 @@ if [[ ! "$CONTEXTLINES" =~ [0-9]+ || "$CONTEXTLINES" -lt 0 || "$CONTEXTLINES" -g
         echo "-c option needs a number between 0 and 99" >&2
         exit 1
 fi
- 
+
+
 # run the script
 find "$2" -type f \
         | sort \
